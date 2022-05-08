@@ -1,4 +1,7 @@
 pipeline{
+
+
+
     agent any
     tools{
         maven 'Maven_3.8.5'
@@ -7,6 +10,7 @@ pipeline{
           stage('Build'){
               steps{
                     sh script: 'mvn clean package'
+              }
               }
               stage('Upload War to Nexus'){
                   steps{
@@ -25,5 +29,4 @@ pipeline{
                   }
           }
     }
-}
 }
