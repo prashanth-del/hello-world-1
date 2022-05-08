@@ -16,7 +16,7 @@ pipeline{
                           classifier: '',
                           file: 'target/webapp.war', type: 'war']],
                           credentialsId: 'nexus3',
-                          groupId: 'com.example.maven-project', 
+                          groupId: 'com.example.maven-project',
                           nexusUrl: '3.84.145.157:8081',
                           nexusVersion: 'nexus3',
                           protocol: 'http',
@@ -25,4 +25,5 @@ pipeline{
                   }
           }
     }
+}
 }
