@@ -8,6 +8,21 @@ pipeline{
               steps{
                     sh script: 'mvn clean package'
               }
+              stage('Upload War to Nexus'){
+                  steps{
+                        nexusArtifactUploader artifacts: [
+
+                        [ artifactId: 'maven-project',
+                          classifier: '',
+                          file: 'target/webapp.war', type: 'war']],
+                          credentialsId: 'nexus3',
+                          groupId: 'com.example.maven-project', 
+                          nexusUrl: '3.84.145.157:8081',
+                          nexusVersion: 'nexus3',
+                          protocol: 'http',
+                          repository: 'helloworld-release',
+                          version: '1.0.0'
+                  }
           }
     }
 }
