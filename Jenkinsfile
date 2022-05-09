@@ -21,7 +21,7 @@ pipeline{
                           file: 'target/webapp.war', type: 'war']],
                           credentialsId: 'nexus3',
                           groupId: 'com.example.maven-project',
-                          nexusUrl: '3.84.145.157:8081',
+                          nexusUrl: '54.204.235.19:8081',
                           nexusVersion: 'nexus3',
                           protocol: 'http',
                           repository: 'helloworld-release',
